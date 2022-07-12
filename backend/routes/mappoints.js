@@ -14,7 +14,7 @@ routerMappoints.post(ROUTE_MAPPOINTS, (req, res) => {
   authController.createPoint(req, res);
 });
 
-routerMappoints.post(DELETE_ALL, (req, res) => {
+routerMappoints.delete(DELETE_ALL, (req, res) => {
   console.log("asd", req.body);
   authController.createPoint(req, res);
 });
