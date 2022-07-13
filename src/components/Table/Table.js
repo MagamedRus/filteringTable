@@ -1,10 +1,11 @@
 import React from "react";
+import styles from "./Table.module.scss";
 import HeaderTable from "../HeaderTable/HeaderTable.js";
 import TableBody from "../TableBody/TableBody.js";
 
-const Table = ({rows}) => {
+const Table = ({ rows }) => {
   return (
-    <table>
+    <table className={styles.container}>
       <HeaderTable />
       <TableBody rows={rows} />
     </table>

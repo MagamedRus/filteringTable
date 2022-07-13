@@ -1,0 +1,11 @@
+@import "../../styles/table.scss";
+
+.container {
+  height: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.641);
+  td {
+    @extend %rowEl;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}

@@ -1,8 +1,9 @@
 import React, { memo } from "react";
+import styles from './HeaderTable.module.scss';
 
 const HeaderTable = () => (
-  <thead>
-    <tr>
+  <thead className={styles.container}>
+    <tr className={styles.row}>
       <th>Дата</th>
       <th>Название</th>
       <th>Количество</th>
