@@ -10,12 +10,10 @@ routerMappoints.get(ROUTE_MAPPOINTS, (req, res) =>
 );
 
 routerMappoints.post(ROUTE_MAPPOINTS, (req, res) => {
-  console.log("asd", req.body);
   authController.createPoint(req, res);
 });
 
 routerMappoints.delete(DELETE_ALL, (req, res) => {
-  console.log("asd", req.body);
   authController.createPoint(req, res);
 });
 
