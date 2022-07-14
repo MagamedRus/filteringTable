@@ -18,7 +18,9 @@ export const getAllPoints = async () => {
         result = data.points;
       }
     })
-    .catch((err) => console.log("getAllPoints err -", err));
+    .catch((err) =>
+      console.log("getAllPoints err -", err.response.data.message)
+    );
 
   return result;
 };
@@ -27,25 +29,17 @@ export const getAllPoints = async () => {
 export const createNewMapPoint = async ({ name, distance, count }) => {
   const currDate = new Date();
   const date = `${currDate.getFullYear()}-${currDate.getMonth()}-${currDate.getDate()}`;
-  let result = false;
   const data = {
     name,
     distance,
     count,
     date,
   };
-
   await axios
     .post(URL_SERVER + URL_MAPPOINTS, data)
-    .then((res) => {
-      const body = res.body;
-      if (body?.isSuccess) {
-        result = true;
-      }
-    })
-    .catch((err) => console.log("createNewMapPoint err -", err));
-
-  return result;
+    .catch((err) =>
+      console.log("createNewMapPoint err -", err.response.data.message)
+    );
 };
 
 /** delete all map points  */
@@ -59,7 +53,9 @@ export const deleteAllPoints = async () => {
         result = true;
       }
     })
-    .catch((err) => console.log("deleteAllPoints err -", err));
+    .catch((err) =>
+      console.log("deleteAllPoints err -", err.response.data.message)
+    );
 
   return result;
 };
