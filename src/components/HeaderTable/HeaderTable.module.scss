@@ -1,11 +1,12 @@
 @import "../../styles/table.scss";
+@import '../../styles/colors.scss';
 
 .container {
   height: 40px;
 }
 
 .row {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.801);
+  border-bottom: 1px solid $color-border;
   height: 35px;
   th {
     @extend %rowEl;
