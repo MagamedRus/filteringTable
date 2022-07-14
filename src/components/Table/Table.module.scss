@@ -1,6 +1,12 @@
 .container {
-  min-width: 600px;
-  max-width: 800px;
+  width: 700px;
+  margin: auto;
   border-collapse: collapse;
   border: 1px solid #ffffff9c;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    margin-left: calc(15vw + 30px);
+  }
 }
