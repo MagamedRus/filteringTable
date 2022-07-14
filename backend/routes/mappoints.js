@@ -14,7 +14,7 @@ routerMappoints.post(ROUTE_MAPPOINTS, (req, res) => {
 });
 
 routerMappoints.delete(DELETE_ALL, (req, res) => {
-  authController.createPoint(req, res);
+  authController.deleteAll(req, res);
 });
 
 export default routerMappoints;
