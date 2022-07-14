@@ -20,8 +20,9 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <Table rows={rowsData} />
-      <Filter confirmFilters={confirmFilters} />
+      <div className={styles.fixedBackround} />
+        <Table rows={rowsData} />
+        <Filter confirmFilters={confirmFilters} />
     </div>
   );
 }
