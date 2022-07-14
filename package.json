@@ -32,7 +32,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "dev-backend": "nodemon backend/index.js"
+    "dev-backend": "nodemon backend/index.js",
+    "refresh-db": "node src/common/refreshDB"
   },
   "eslintConfig": {
     "extends": [
