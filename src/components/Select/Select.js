@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Select.module.scss";
 
 function Select({ options, value, setValue, placeholder, isErr }) {
   const [isVisible, setVisible] = useState(false);
-  const reverseVisible = () => setVisible((prev) => !prev);
+  const reverseVisible = () => options && setVisible((prev) => !prev);
 
   const chooseValue = (value) => {
     reverseVisible();
     setValue(value);
   };
+
+  useEffect(() => {
+    setVisible(false);
+  }, [options]);
 
   return (
     <>
@@ -24,9 +28,9 @@ function Select({ options, value, setValue, placeholder, isErr }) {
 
       {/* Drop list (options) */}
       <div className={isVisible ? styles.options : styles.hideOptions}>
-        {options.map((option) => (
-          <button key={option.id} onClick={() => chooseValue(option.value)}>
-            {option.value}
+        {options?.map((option) => (
+          <button key={option.id} onClick={() => chooseValue(option)}>
+            {option.title}
           </button>
         ))}
       </div>

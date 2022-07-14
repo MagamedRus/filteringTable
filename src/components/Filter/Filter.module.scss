@@ -4,7 +4,8 @@
 .container {
   position: fixed;
   top: 10vh;
-  right: 15vw;
+  // 350px is half of table size, 40px space between elements
+  left: calc(50vw + 350px + 40px);
   width: 200px;
   height: max-content;
   border: 1px solid $color-border;
@@ -65,4 +66,11 @@
 
 .errInput {
   @extend %errInput;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    left: unset;
+    margin-left: calc(15vw + 700px + 30px);
+  }
 }

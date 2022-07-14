@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { typesCol, typesFilter } from "../../constants/filter.js";
+import { typesCol } from "../../constants/filter.js";
 import Select from "../Select/Select.js";
 import styles from "./Filter.module.scss";
 
@@ -19,7 +19,8 @@ function Filter({ confirmFilters }) {
     setErrStates((prevState) => ({ ...prevState, typeFilter: false }));
   };
   const setTypeCol = (state) => {
-    setFilterObj((prevState) => ({ ...prevState, typeCol: state }));
+    //here could be deep comparison
+    setFilterObj((prevState) => ({ ...prevState, typeFilter: null, typeCol: state }));
     setErrStates((prevState) => ({ ...prevState, typeCol: false }));
   };
   const setValueFilter = (state) => {
@@ -64,8 +65,8 @@ function Filter({ confirmFilters }) {
         <Select
           placeholder={"Выберите колонку"}
           isErr={errStates.typeCol}
-          options={typesCol}
-          value={filterObj.typeCol}
+          options={Object.values(typesCol)}
+          value={filterObj.typeCol?.title}
           setValue={setTypeCol}
         />
       </div>
@@ -74,8 +75,10 @@ function Filter({ confirmFilters }) {
         <Select
           placeholder={"Выберите условие"}
           isErr={errStates.typeFilter}
-          options={typesFilter}
-          value={filterObj.typeFilter}
+          options={
+            filterObj.typeCol ? Object.values(filterObj.typeCol.filters) : null
+          }
+          value={filterObj.typeFilter?.title}
           setValue={setTypeFilter}
         />
       </div>
