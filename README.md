@@ -1,10 +1,8 @@
 author: Muhammad K. (muhammadkasymov@yandex.ru)
 
-Для запуска понадобиться NPM
+# scripts
+run front-end - npm start
+run backend - npm run dev-backend
 
-Первый запуск:
- 1) npm i
- 2) npm start
-
-Последущие запуски:
-  1) npm start
+# db
+file in ./backend/bd/mappoints.sql
