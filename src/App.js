@@ -2,21 +2,26 @@ import React, { useEffect, useState } from "react";
 import Table from "./components/Table/Table.js";
 import { getAllPoints } from "./controllers/mappoints.js";
 import styles from "./App.module.scss";
+import Filter from "./components/Filter/Filter.js";
 
-function App(props) {
+function App() {
   const [rowsData, setRowsData] = useState([]);
 
   useEffect(() => {
-    async function uploadData() {
+    (async function () {
       const allPoints = await getAllPoints();
       allPoints[0] && setRowsData(allPoints);
-    }
-    uploadData();
+    })();
   }, []);
+
+  const confirmFilters = (filterData) => {
+    console.log(filterData);
+  };
 
   return (
     <div className={styles.container}>
       <Table rows={rowsData} />
+      <Filter confirmFilters={confirmFilters} />
     </div>
   );
 }
