@@ -1,0 +1,17 @@
+%errInput {
+  animation-duration: 2s;
+  animation-name: beamingErr;
+  animation-iteration-count: infinite;
+}
+
+@keyframes beamingErr {
+  from {
+    border: 1px solid $second-color-border;
+  }
+  50% {
+    border: 1px solid $color-red-border;
+  }
+  100% {
+    border: 1px solid $second-color-border;
+  }
+}
