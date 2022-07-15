@@ -8,7 +8,8 @@ author: Muhammad K. (muhammadkasymov@yandex.ru)
 # db
 file in ./backend/bd/mappoints.sql
 
-P.S - If u want run project on locale, u need rewrite:
+# P.S 
+If u want run project on locale, u need rewrite:
 
  - package.json: proxy: http://localhost:8000;
  - ./backend/constants/config: uncomment ready MYSQL_CONFIG, and delete/comment existing MYSQL_CONFIG
