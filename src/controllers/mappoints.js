@@ -10,7 +10,6 @@ export const getAllPoints = async () => {
       headers: {
         "Cache-Control": "no-cache", // without it, we have have 304 status on req
       },
-      params: { maxUsers: 200 },
     })
     .then((res) => {
       const data = res.data;
