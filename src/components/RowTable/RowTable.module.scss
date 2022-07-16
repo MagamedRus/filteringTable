@@ -9,3 +9,19 @@
     color: rgba(255, 255, 255, 0.8);
   }
 }
+
+@media screen and (max-width: 500px) {
+  .container {
+    td {
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .row {
+    th {
+      font-size: 0.6em;
+    }
+  }
+}
