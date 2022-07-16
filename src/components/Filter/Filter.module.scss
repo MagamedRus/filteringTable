@@ -2,15 +2,12 @@
 @import "../../styles/animations.scss";
 
 .container {
-  position: fixed;
-  top: 10vh;
-  // 350px is half of table size, 40px space between elements
-  left: calc(50vw + 350px + 40px);
   width: 200px;
   height: max-content;
   border: 1px solid $color-border;
-  margin-left: 15px;
   padding: 0 10px;
+  margin-right: auto;
+
 }
 
 .header {
@@ -68,9 +65,44 @@
   @extend %errInput;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 960px) {
   .container {
-    left: unset;
-    margin-left: calc(15vw + 700px + 30px);
+    position: fixed;
+    width: 350px;
+    min-height: 360px;
+    top: 20vh;
+    transition: top;
+    margin: unset;
+    padding: 4px 14px;
+  }
+
+  .header {
+    font-size: 2.2em;
+    height: 45px;
+  }
+
+  .input {
+    width: 300px;
+    height: 34px;
+    font-size: 1.4em;
+    margin: 0 auto;
+  }
+  .row {
+    width: 300px;
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 8px;
+    }
+  }
+  .btnContainer {
+    margin-top: 40px;
+    margin-bottom: 14px;
+    flex-direction: column-reverse;
+    height: 84px;
+    justify-content: space-between;
+  }
+  .btn {
+    font-size: 1.2em;
+    height: 35px;
   }
 }

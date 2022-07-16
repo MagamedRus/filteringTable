@@ -7,6 +7,7 @@
   padding: 4px 10px;
   border: 1px solid $second-color-border;
   user-select: none;
+  width: calc(100% - 20px); // 20px is padding
 }
 
 .valuedP {
@@ -19,8 +20,8 @@
 
 .options {
   margin-top: 5px;
-  width: 158px;
   padding: 7px 10px 10px 10px;
+  width: calc(100% - 20px); // 20px is padding
   border: 1px solid $second-font-color;
   button {
     background: transparent;
@@ -41,4 +42,23 @@
 
 .errBorder {
   @extend %errInput;
+}
+
+@media screen and (max-width: 960px) {
+  .select {
+    min-height: 28px;
+    padding: 4px 10px;
+    width: 100%;
+    p {
+      font-size: 1.4em;
+      margin: 4px 0;
+    }
+  }
+  .options {
+    width: 100%;
+    margin-top: 10px;
+    button {
+      font-size: 1.4em;
+    }
+  }
 }

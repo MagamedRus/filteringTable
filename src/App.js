@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Table from "./components/Table/Table.js";
 import { getAllPoints } from "./controllers/mappoints.js";
 import styles from "./App.module.scss";
-import Filter from "./components/Filter/Filter.js";
 import { getFilteredPoints } from "./common/filters.js";
+import AdaptiveFilter from "./components/AdaptiveFilter/AdaptiveFilter.js";
 
 function App() {
   const [rows, setRows] = useState([]);
@@ -26,7 +26,7 @@ function App() {
     <div className={styles.container}>
       <div className={styles.fixedBackround} />
       <Table rows={filteredRows} />
-      <Filter confirmFilters={confirmFilters} />
+      <AdaptiveFilter confirmFilters={confirmFilters} />
     </div>
   );
 }
