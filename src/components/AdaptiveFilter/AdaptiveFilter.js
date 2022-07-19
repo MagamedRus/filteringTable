@@ -7,7 +7,7 @@ const AdaptiveFilter = ({ confirmFilters }) => {
   const [isShow, setIsShow] = useState(!isMobile);
 
   const confFilters = (filterData) => {
-    setIsShow(false);
+    isMobile && setIsShow(false);
     confirmFilters(filterData);
   };
 
